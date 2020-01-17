@@ -40,21 +40,14 @@ public class AuthorizeController {
         if (user != null) {
             //登录成功
             request.getSession().setAttribute("user",user);
-            return "redirect:index";
+            return "redirect:/";
         } else {
             //登录失败，重新登录
-
+            return "redirect:/";
         }
 
 
-        return "index";
     }
 
-    public static  int  add (int a  ,int b){
-
-
-
-        return  1  ;
-    }
 
 }
