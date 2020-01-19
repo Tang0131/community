@@ -49,8 +49,9 @@ public class AuthorizeController {
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
-            userMapper.insert(user);
             request.getSession().setAttribute("user",githubUser);
+            System.out.println(user);
+            userMapper.insert(user);
             return "redirect:/";
         } else {
             //登录失败，重新登录

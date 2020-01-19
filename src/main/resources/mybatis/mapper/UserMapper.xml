@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="life.majiang.community.mapper.UserMapper">
+    <resultMap id="usermap" type="life.majiang.community.model.User">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="account_id" jdbcType="VARCHAR" property="accountId"/>
+        <result column="token" jdbcType="VARCHAR" property="token"/>
+        <result column="gmt_create" jdbcType="BIGINT" property="gmtCreate"/>
+        <result column="gmt_modified" jdbcType="BIGINT" property="gmtModified"/>
+
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,account_id,token,gmt_create,gmt_modified
+    </sql>
+
+    <select id="getAll" resultMap="usermap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user
+    </select>
+
+    <insert id="insert" keyProperty="id">
+    insert INTO user (name,account_id,token,gmt_create,gmt_modified) values
+        (#{name},#{accountId},#{token},#{gmtCreate},#{gmtModified })
+    </insert>
+
+</mapper>
