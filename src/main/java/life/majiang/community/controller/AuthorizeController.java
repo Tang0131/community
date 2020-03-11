@@ -28,6 +28,8 @@ public class AuthorizeController {
     private String clientSecret;
     @Value("${github.redirect.uri}")
     private String redirectUri;
+
+
     @Autowired
     UserMapper userMapper;
 
@@ -57,7 +59,7 @@ public class AuthorizeController {
             System.out.println(user);
             userMapper.insert(user);
             //登录成功，写入cookie和session
-            response.addCookie(new Cookie("token",token));
+            response.addCookie(new Cookie("token", token));
 
 
             return "redirect:/";

@@ -25,7 +25,7 @@
     tag
     -->
     <insert id="create" parameterType="life.majiang.community.model.Question">
-    insert into question  (title, description, gmt_create, gmt_modified, creator, tag)
+    insert into question  (title, description, gmt_create,gmt_modified,creator, tag)
     values (#{title},#{description},#{gmtCreate},#{gmtModified},#{creator},#{tag})
     </insert>
 
