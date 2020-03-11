@@ -15,9 +15,9 @@
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">码匠社区</span>
+                <span class="sr-only">糖糖社区</span>
             </button>
-            <a class="navbar-brand" href="#">码匠社区</a>
+            <a class="navbar-brand" href="/">糖糖社区</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <form class="navbar-form navbar-left">
@@ -58,16 +58,19 @@ state=1">登录</a></li>
             <form action="/publish" method="post">
                 <div class="form-group">
                     <label for="title">问题标题 (简单扼要) :</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="问题标题">
+                    <input type="text" class="form-control" th:value="${title}" id="title" name="title"
+                           placeholder="问题标题">
                 </div>
                 <div class="form-group">
-                    <label for="title">问题补充 (必填,请参照右侧提示):</label>
-                    <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                    <label for="description">问题补充 (必填,请参照右侧提示):</label>
+                    <textarea name="description" id="description" th:value="${description}" cols="30" rows="10"
+                              class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="title">添加标签:</label>
-                    <input type="text" class="form-control" id="tag" name="tag" placeholder="输入标签，以 ，分隔">
+                    <label for="tag">添加标签:</label>
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag"
+                           placeholder="输入标签，以 ，分隔">
                 </div>
 
 

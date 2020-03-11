@@ -29,5 +29,7 @@
     values (#{title},#{description},#{gmtCreate},#{gmtModified},#{creator},#{tag})
     </insert>
 
-
+<select id="list" parameterType="life.majiang.community.model.Question" resultType="life.majiang.community.model.Question">
+select  * from question
+</select>
 </mapper>

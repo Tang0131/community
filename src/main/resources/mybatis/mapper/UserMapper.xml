@@ -24,8 +24,12 @@
     </select>
 
     <insert id="insert" keyProperty="id">
-    insert INTO user (name,account_id,token,gmt_create,gmt_modified) values
-        (#{name},#{accountId},#{token},#{gmtCreate},#{gmtModified })
+    insert INTO user (name,account_id,token,gmt_create,gmt_modified,avatar_url) values
+        (#{name},#{accountId},#{token},#{gmtCreate},#{gmtModified },#{avatarUrl})
     </insert>
 
+    <select id="findById" resultType="life.majiang.community.model.User">
+        select  * from  user where  id=#{id}
+
+    </select>
 </mapper>
